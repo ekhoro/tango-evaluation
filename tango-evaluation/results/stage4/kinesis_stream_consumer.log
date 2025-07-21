@@ -1,0 +1,39 @@
+🔍 Validating Terraform file: resources/stage4/kinesis_stream_consumer.tf
+================================================
+📦 Initializing Terraform...
+Initializing the backend...
+Initializing provider plugins...
+- Finding hashicorp/awscc versions matching "~> 1.49.0"...
+✅ Terraform initialization successful
+
+🔧 Validating configuration...
+Success! The configuration is valid.
+✅ Terraform validation successful
+
+📋 Generating plan...
+✅ Terraform plan successful
+
+📄 Plan summary:
+Plan: 2 to add, 0 to change, 0 to destroy.
+- awscc_kinesis_stream.example_stream
+- awscc_kinesis_stream_consumer.example_consumer
+
+🚀 Apply Results:
+✅ All resources created successfully
+Creation sequence:
+1. Kinesis Stream (12s)
+2. Stream Consumer (14s)
+
+Resource Details:
+- Stream Name: example-stream
+- Consumer Name: example-consumer
+- Consumer Status: ACTIVE
+- Creation Timestamp: 2025-07-21T20:43:09Z
+
+🧹 Cleanup:
+✅ Terraform destroy successful
+Destruction sequence:
+1. Stream Consumer (13s)
+2. Kinesis Stream (11s)
+
+🎉 Validation complete! Stage 4 implementation successful.

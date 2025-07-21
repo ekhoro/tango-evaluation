@@ -1,0 +1,47 @@
+🔍 Validating Terraform file: resources/stage3/lambda_function.tf
+================================================
+📦 Initializing Terraform...
+Initializing the backend...
+Initializing provider plugins...
+- Finding hashicorp/awscc versions matching "~> 1.0"...
+- Finding hashicorp/aws versions matching "~> 5.0"...
+- Installing hashicorp/awscc v1.49.0...
+- Installing hashicorp/aws v5.100.0...
+✅ Terraform initialization successful
+
+🔧 Validating configuration...
+Success! The configuration is valid.
+✅ Terraform validation successful
+
+📋 Generating plan...
+✅ Terraform plan successful
+
+📄 Plan summary:
+Plan: 3 to add, 0 to change, 0 to destroy.
+- aws_iam_role.example
+- aws_iam_role_policy_attachment.example
+- awscc_lambda_function.example
+
+🚀 Apply Attempt:
+First attempt: ❌ Failed
+Error: The role defined for the function cannot be assumed by Lambda
+Cause: IAM role propagation delay
+
+Second attempt (with delay): ✅ Success
+- IAM role created
+- Policy attached
+- Lambda function created
+
+🧹 Cleanup:
+✅ Terraform destroy successful
+Resources cleaned up:
+- awscc_lambda_function.example
+- aws_iam_role_policy_attachment.example
+- aws_iam_role.example
+
+🎉 Validation complete! Your Terraform file is ready to use.
+
+Next steps:
+1. Review the generated plan
+2. Consider IAM role propagation delay in implementations
+3. Don't forget to clean up with: terraform destroy

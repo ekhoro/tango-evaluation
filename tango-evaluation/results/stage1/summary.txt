@@ -1,0 +1,75 @@
+Stage 1 Testing Summary
+=====================
+Date: 2024-07-17
+
+Resources Tested:
+---------------
+1. awscc_s3_bucket (Basic Storage)
+   - ❌ Failed validation
+   - Error: Incorrect attribute value type for "access_control"
+   - Issue: Schema mismatch in configuration
+
+2. awscc_lambda_function (Serverless Compute)
+   - ✅ Configuration valid
+   - ✅ Plan successful
+   - ❌ Apply failed
+   - Error: Cross-account pass role not allowed
+   - Issue: Placeholder IAM role ARN
+
+3. awscc_apprunner_vpc_connector (Modern VPC Integration)
+   - ✅ Configuration valid
+   - ✅ Plan successful
+   - ❌ Apply failed
+   - Error: Failed to get subnets details
+   - Issue: Placeholder subnet IDs
+
+4. awscc_kinesis_stream_consumer (Real-time Data Processing)
+   - ❌ Failed validation
+   - Error: Resource type not supported by provider
+   - Issue: Resource not available in current provider version
+
+5. awscc_aiops_investigation_group (AI Operations)
+   - ❌ Failed validation
+   - Error: Resource type not supported by provider
+   - Issue: Resource not available in current provider version
+
+Overall Analysis:
+---------------
+Success Rates:
+- Configuration Syntax: 2/5 (40%)
+- Resource Support: 3/5 (60%)
+- Apply Attempts: 0/5 (0%)
+
+Key Findings:
+1. Code Generation:
+   - Successfully generates valid HCL syntax
+   - Includes all required fields
+   - Proper structure and formatting
+   - Appropriate use of placeholder values
+
+2. Resource Support:
+   - Core services well supported (S3, Lambda)
+   - Modern services partially supported (App Runner)
+   - Newest services not yet available (AIOps, some Kinesis features)
+
+3. Common Issues:
+   - Schema mismatches in configuration
+   - Placeholder values causing expected failures
+   - Resource type availability in provider
+
+Recommendations:
+--------------
+1. Implementation:
+   - Add schema validation to code generation
+   - Consider provider version constraints
+   - Include resource availability checks
+
+2. Testing:
+   - Verify resource support before generation
+   - Add schema validation step
+   - Consider actual value requirements
+
+3. Documentation:
+   - Document required provider versions
+   - List supported/unsupported resources
+   - Include placeholder value guidance

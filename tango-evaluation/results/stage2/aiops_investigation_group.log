@@ -1,0 +1,147 @@
+🔍 Validating Terraform file: resources/stage2/aiops_investigation_group.tf
+================================================
+📦 Initializing Terraform...
+Initializing the backend...
+Initializing provider plugins...
+- Finding hashicorp/awscc versions matching "~> 0.70.0"...
+- Finding hashicorp/random versions matching "~> 3.5.0"...
+- Finding hashicorp/aws versions matching "~> 5.0"...
+- Installing hashicorp/awscc v0.70.0...
+- Installed hashicorp/awscc v0.70.0 (signed by HashiCorp)
+- Installing hashicorp/random v3.5.1...
+- Installed hashicorp/random v3.5.1 (signed by HashiCorp)
+- Installing hashicorp/aws v5.100.0...
+- Installed hashicorp/aws v5.100.0 (signed by HashiCorp)
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+✅ Terraform initialization successful
+
+🔧 Validating configuration...
+
+Warning: Argument is deprecated
+
+  with aws_iam_role.aiops_investigation_role,
+  on aiops_investigation_group.tf line 49, in resource "aws_iam_role" "aiops_investigation_role":
+  49:   managed_policy_arns = [
+  50:     "arn:aws:iam::aws:policy/AmazonCloudWatchFullAccess",
+  51:     "arn:aws:iam::aws:policy/AWSXrayReadOnlyAccess"
+  52:   ]
+
+managed_policy_arns is deprecated. Use the aws_iam_role_policy_attachment
+resource instead. If Terraform should exclusively manage all managed policy
+attachments (the current behavior of this argument), use the
+aws_iam_role_policy_attachments_exclusive resource as well.
+
+Error: Invalid resource type
+
+  on aiops_investigation_group.tf line 58, in resource "awscc_aiops_investigation_group" "example":
+  58: resource "awscc_aiops_investigation_group" "example" {
+
+The provider hashicorp/awscc does not support resource type
+"awscc_aiops_investigation_group".
+❌ Terraform validation failed
+Stage 2 AIOps Investigation Group Test Results
+=========================================
+Date: 2024-07-18
+
+Test Sequence Summary:
+-------------------
+1. Configuration Validation
+   ❌ Failed validation
+   Primary Error: Invalid resource type "awscc_aiops_investigation_group"
+   Warning: Deprecated argument "managed_policy_arns" in IAM role
+
+2. Generated Configuration Analysis:
+   a. Resource Structure:
+      - Random ID generation ✅
+      - IAM Role configuration ⚠️ (uses deprecated argument)
+      - Investigation Group configuration ❌ (unsupported resource type)
+      - Encryption configuration ✅
+      - Tags implementation ✅
+
+   b. Variable Management:
+      - Region configuration ✅
+      - Resource naming ✅
+      - Retention settings ✅
+      - CloudTrail integration ✅
+      - Encryption options ✅
+
+   c. Security Features:
+      - IAM role with proper service principal ✅
+      - Managed policies attachment ⚠️ (deprecated approach)
+      - KMS encryption options ✅
+      - CloudTrail integration ✅
+
+3. Stage 2 Requirements Coverage:
+   - Provider constraints ✅
+   - Variable usage ✅
+   - Resource dependencies ✅
+   - Naming conventions ✅
+   - Supporting resources ✅
+   - Schema validation ❌ (resource not supported)
+
+Issues Identified:
+----------------
+1. Resource Type Error:
+   - awscc_aiops_investigation_group not available in provider
+   - Indicates gap in Cloud Control API support
+   - Affects core functionality of configuration
+
+2. IAM Configuration:
+   - Uses deprecated managed_policy_arns argument
+   - Should use aws_iam_role_policy_attachment instead
+   - May need modernization for best practices
+
+3. Documentation:
+   - Includes variable validations
+   - Good encryption configuration options
+   - Clear resource dependencies
+
+Improvements from Stage 1:
+-----------------------
+1. Infrastructure Completeness:
+   - Added IAM role configuration
+   - Included encryption settings
+   - CloudTrail integration
+   - Better variable validation
+
+2. Security Enhancements:
+   - KMS encryption options
+   - IAM role with proper permissions
+   - CloudTrail event history
+   - Managed policy attachments
+
+3. Variable Management:
+   - Input validation for encryption type
+   - Flexible KMS key configuration
+   - Configurable retention period
+   - Comprehensive tagging
+
+Next Steps:
+----------
+1. Resource Support:
+   - Verify AWS Cloud Control API support
+   - Consider alternative service approaches
+   - Check AWS provider compatibility
+
+2. IAM Modernization:
+   - Update to use policy attachment resources
+   - Review permission requirements
+   - Consider least privilege approach
+
+3. Documentation Updates:
+   - Add prerequisites section
+   - Document service limitations
+   - Include alternative approaches

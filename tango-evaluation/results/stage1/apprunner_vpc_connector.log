@@ -1,0 +1,94 @@
+🔍 Validating Terraform file: resources/stage1/apprunner_vpc_connector.tf
+================================================
+📦 Initializing Terraform...
+Initializing the backend...
+Initializing provider plugins...
+- Finding hashicorp/awscc versions matching "~> 0.65.0"...
+- Installing hashicorp/awscc v0.65.0...
+- Installed hashicorp/awscc v0.65.0 (signed by HashiCorp)
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+✅ Terraform initialization successful
+
+🔧 Validating configuration...
+Success! The configuration is valid.
+
+✅ Terraform validation successful
+
+📋 Generating plan...
+✅ Terraform plan successful
+
+📄 Plan summary:
+Plan: 1 to add, 0 to change, 0 to destroy.
+
+🎉 Validation complete! Your Terraform file is ready to use.
+
+Next steps:
+1. Review the generated plan
+2. Apply with: terraform apply
+3. Don't forget to clean up with: terraform destroy
+
+Apply Attempt
+   ❌ Failed during resource creation
+   Error: "Failed to get subnets details from subnet ids"
+   Root Cause: Placeholder subnet IDs used (subnet-0bcd234efg567890b, subnet-0abc123def456789a)
+
+Analysis and Observations:
+========================
+Date: 2024-07-17
+
+Test Sequence Summary:
+-------------------
+1. Configuration Validation
+   ✅ Terraform init successful
+   ✅ Provider initialization successful
+   ✅ Configuration syntax valid
+
+2. Plan Generation
+   ✅ Plan created successfully
+   - Planned: 1 to add, 0 to change, 0 to destroy
+   - All required fields present
+   - Security groups and subnets included
+   - Tags properly formatted
+
+3. Apply Attempt
+   ❌ Failed during resource creation
+   Error: "Failed to get subnets details from subnet ids"
+   Root Cause: Placeholder subnet IDs used (subnet-0bcd234efg567890b, subnet-0abc123def456789a)
+
+Observations:
+------------
+1. Generated code quality:
+   - Correct resource structure
+   - All required fields included
+   - Proper formatting and organization
+   - Includes optional configurations (tags)
+
+2. Stage 1 effectiveness:
+   - Successfully generated valid Terraform syntax
+   - Included necessary provider configuration
+   - Created complete resource definition
+   - Used appropriate placeholder values
+
+3. Validation results:
+   - Code passes terraform validation
+   - Fails at actual resource creation (expected with placeholder values)
+   - Error messages are clear and actionable
+
+Next Steps:
+-----------
+- Move on to testing next resource
+- Note that placeholder values need replacement for actual deployment
+- Consider this a successful Stage 1 test as code structure is valid

@@ -1,0 +1,80 @@
+Stage 2 App Runner VPC Connector Test Results
+=========================================
+Date: 2024-07-17
+
+Test Sequence Summary:
+-------------------
+1. Configuration Validation
+   ❌ Failed validation
+   Error: Invalid resource type "awscc_ec2_securitygroup"
+   Error: Reference to undeclared resource "awscc_ec2_security_group"
+
+2. Generated Configuration Analysis:
+   a. Resource Structure:
+      - Random ID generation ✅
+      - VPC creation included ✅
+      - Multiple subnets in different AZs ✅
+      - Security group configuration ❌ (incorrect resource type)
+      - VPC Connector configuration ✅
+
+   b. Variable Management:
+      - Region configuration ✅
+      - Resource prefix handling ✅
+      - Environment settings ✅
+      - Stage configuration ✅
+      - CIDR block management ✅
+
+   c. Naming and Tagging:
+      - Consistent naming pattern ✅
+      - Environment tags ✅
+      - Stage tags ✅
+      - Resource-specific tags ✅
+
+3. Stage 2 Requirements Coverage:
+   - Provider constraints ✅
+   - Variable usage ✅
+   - Resource dependencies ✅
+   - Naming conventions ❌ (incorrect for security group)
+   - Supporting resources ✅
+   - Schema validation ❌ (failed)
+
+Issues Identified:
+----------------
+1. Resource Type Errors:
+   - Incorrect: awscc_ec2_securitygroup
+   - Incorrect: awscc_ec2_security_group
+   - These resources are not supported by AWS Cloud Control provider
+
+2. Schema Validation:
+   - Security group attributes don't match provider schema
+   - Resource naming doesn't follow Cloud Control conventions
+
+3. Dependencies:
+   - VPC and subnet resources appear correct
+   - Security group resource prevents full validation
+
+Improvements from Stage 1:
+-----------------------
+1. Infrastructure Completeness:
+   - Added complete VPC setup
+   - Included multiple availability zones
+   - Added security group configuration
+   - Proper resource dependencies
+
+2. Variable Management:
+   - More flexible configuration
+   - Environment-aware setup
+   - Stage-based deployment
+   - Better resource naming
+
+3. Documentation:
+   - Clear resource relationships
+   - Structured configuration
+   - Comprehensive variable definitions
+
+Next Steps:
+----------
+- Verify correct resource types in AWS Cloud Control provider
+- Update security group configuration
+- Validate schema requirements
+- Test with correct resource types

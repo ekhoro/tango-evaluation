@@ -1,0 +1,61 @@
+Stage 2 Testing Summary
+=====================
+Date: 2024-07-18
+
+Resources Tested:
+---------------
+1. Basic Resources
+   - S3 Bucket: ✅ Success (Valid config, successful apply/destroy)
+   - Lambda Function: ✅ Success (Valid config, successful apply/destroy)
+
+2. Advanced Networking
+   - App Runner VPC Connector: ❌ Failed (Invalid resource types for VPC components)
+
+3. Modern Services
+   - Kinesis Stream Consumer: ❌ Failed (Resource not supported)
+   - AIOps Investigation Group: ❌ Failed (Resource not supported)
+
+Success Metrics:
+--------------
+- Configuration Syntax: 100% (5/5)
+- Resource Support: 40% (2/5)
+- Apply Success: 40% (2/5)
+
+Key Findings:
+-----------
+1. Code Generation
+   - Successfully generates valid HCL syntax
+   - Includes all required fields
+   - Proper structure and formatting
+   - Appropriate use of variables and dependencies
+
+2. Resource Support
+   - Core services well supported (S3, Lambda)
+   - Modern services partially supported (App Runner)
+   - Newest services not yet available (AIOps, Kinesis features)
+
+3. Common Issues
+   - Resource type availability in provider
+   - Schema mismatches in configuration
+   - Provider version constraints
+   - Service prerequisites documentation
+
+Recommendations:
+--------------
+1. Implementation
+   - Add schema validation to code generation
+   - Consider provider version constraints
+   - Include resource availability checks
+   - Add service prerequisites validation
+
+2. Testing
+   - Verify resource support before generation
+   - Add schema validation step
+   - Consider actual value requirements
+   - Test service prerequisites
+
+3. Documentation
+   - Document required provider versions
+   - List supported/unsupported resources
+   - Include prerequisite requirements
+   - Add alternative resource suggestions

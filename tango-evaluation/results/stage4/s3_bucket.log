@@ -1,0 +1,49 @@
+🔍 Validating Terraform file: resources/stage4/s3_bucket.tf
+================================================
+📦 Initializing Terraform...
+Initializing the backend...
+Initializing provider plugins...
+- Finding hashicorp/awscc versions matching "~> 1.49.0"...
+- Installing hashicorp/awscc v1.49.0...
+✅ Terraform initialization successful
+
+🔧 Validating configuration...
+Success! The configuration is valid.
+✅ Terraform validation successful
+
+📋 Generating plan...
+✅ Terraform plan successful
+
+📄 Plan summary:
+Plan: 1 to add, 0 to change, 0 to destroy.
+
+🚀 Apply Attempt:
+✅ Resource created successfully
+- Bucket created with dynamic name
+- Public access blocked
+- Tags applied
+- Encryption configured automatically
+
+🧹 Cleanup:
+✅ Terraform destroy successful
+Resource cleaned up:
+- S3 bucket destroyed successfully
+
+Stage 4 Improvements:
+-------------------
+1. Security:
+   - Public access blocking enabled
+   - Default encryption applied
+   - Secure ownership controls
+
+2. Automation:
+   - Dynamic naming with timestamp
+   - Consistent tagging
+   - Output management
+
+3. Validation:
+   - Provider version pinned
+   - Region explicitly set
+   - Resource attributes verified
+
+🎉 Validation complete! Stage 4 implementation successful.

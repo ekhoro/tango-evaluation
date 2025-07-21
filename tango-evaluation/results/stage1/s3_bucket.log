@@ -1,0 +1,40 @@
+🔍 Validating Terraform file: resources/stage1/s3_bucket.tf
+================================================
+📦 Initializing Terraform...
+Initializing the backend...
+Initializing provider plugins...
+- Finding hashicorp/awscc versions matching "~> 0.65.0"...
+- Installing hashicorp/awscc v0.65.0...
+- Installed hashicorp/awscc v0.65.0 (signed by HashiCorp)
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+✅ Terraform initialization successful
+
+🔧 Validating configuration...
+
+Error: Incorrect attribute value type
+
+  on s3_bucket.tf line 21, in resource "awscc_s3_bucket" "example_bucket":
+  21:   access_control = {
+  22:     public_access_block_configuration = {
+  23:       block_public_acls       = true
+  24:       block_public_policy     = true
+  25:       ignore_public_acls      = true
+  26:       restrict_public_buckets = true
+  27:     }
+  28:   }
+
+Inappropriate value for attribute "access_control": string required.
+❌ Terraform validation failed

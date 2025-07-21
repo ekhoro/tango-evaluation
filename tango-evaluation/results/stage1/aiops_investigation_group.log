@@ -1,0 +1,34 @@
+🔍 Validating Terraform file: resources/stage1/aiops_investigation_group.tf
+================================================
+📦 Initializing Terraform...
+Initializing the backend...
+Initializing provider plugins...
+- Finding hashicorp/awscc versions matching "~> 0.65.0"...
+- Installing hashicorp/awscc v0.65.0...
+- Installed hashicorp/awscc v0.65.0 (signed by HashiCorp)
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+✅ Terraform initialization successful
+
+🔧 Validating configuration...
+
+Error: Invalid resource type
+
+  on aiops_investigation_group.tf line 17, in resource "awscc_aiops_investigation_group" "example_investigation_group":
+  17: resource "awscc_aiops_investigation_group" "example_investigation_group" {
+
+The provider hashicorp/awscc does not support resource type
+"awscc_aiops_investigation_group".
+❌ Terraform validation failed

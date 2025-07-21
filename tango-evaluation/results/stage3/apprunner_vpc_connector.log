@@ -1,0 +1,43 @@
+🔍 Validating Terraform file: resources/stage3/apprunner_vpc_connector.tf
+================================================
+📦 Initializing Terraform...
+Initializing the backend...
+Initializing provider plugins...
+- Finding hashicorp/awscc versions matching "~> 1.0"...
+- Finding hashicorp/aws versions matching "~> 5.0"...
+- Installing hashicorp/awscc v1.49.0...
+- Installing hashicorp/aws v5.100.0...
+✅ Terraform initialization successful
+
+🔧 Validating configuration...
+Success! The configuration is valid.
+✅ Terraform validation successful
+
+📋 Generating plan...
+✅ Terraform plan successful
+
+📄 Plan summary:
+Plan: 5 to add, 0 to change, 0 to destroy.
+- aws_vpc.example
+- aws_subnet.example1
+- aws_subnet.example2
+- aws_security_group.example
+- awscc_apprunner_vpc_connector.example
+
+🚀 Apply Attempt:
+✅ All resources created successfully
+- VPC created
+- Subnets created in two AZs
+- Security group created
+- VPC connector created
+
+🧹 Cleanup:
+✅ Terraform destroy successful
+Resources cleaned up:
+- awscc_apprunner_vpc_connector.example
+- aws_security_group.example
+- aws_subnet.example1
+- aws_subnet.example2
+- aws_vpc.example
+
+🎉 Validation complete! Your Terraform file is ready to use.

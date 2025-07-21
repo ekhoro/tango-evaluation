@@ -1,0 +1,61 @@
+Stage 4 Testing Summary
+=====================
+Date: 2024-07-21
+
+Resources Tested:
+---------------
+1. Basic Resources
+   - S3 Bucket: ✅ Success (Valid config, successful apply/destroy)
+   - Lambda Function: ✅ Success (Valid config, successful apply/destroy with IAM delay)
+
+2. Advanced Networking
+   - App Runner VPC Connector: ✅ Success (Valid config, successful apply/destroy)
+
+3. Modern Services
+   - Kinesis Stream Consumer: ✅ Success (Valid config, successful apply/destroy)
+   - AIOps Investigation Group: ❌ Failed (IAM role assumption issues)
+
+Success Metrics:
+--------------
+- Configuration Syntax: 100% (5/5)
+- Resource Support: 100% (5/5)
+- Apply Success: 80% (4/5)
+
+Key Findings:
+-----------
+1. Code Generation
+   - Successfully generates valid HCL syntax
+   - Handles resource dependencies
+   - Manages IAM roles and policies
+   - Implements proper tagging
+
+2. Resource Support
+   - All services supported by provider
+   - Modern services fully integrated
+   - Service-specific requirements handled
+
+3. Common Issues
+   - IAM role propagation delays
+   - Service-specific permissions
+   - Resource dependencies
+   - Service configuration requirements
+
+Recommendations:
+--------------
+1. Implementation
+   - Handle IAM role delays
+   - Validate service permissions
+   - Check resource dependencies
+   - Test service availability
+
+2. Testing
+   - Add delay handling
+   - Verify IAM permissions
+   - Test resource ordering
+   - Validate cleanup
+
+3. Documentation
+   - Document timing requirements
+   - List required permissions
+   - Note service limitations
+   - Include dependency order
