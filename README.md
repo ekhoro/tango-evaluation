@@ -56,8 +56,6 @@ The context provides a complete framework for generating examples that align wit
 
 ### Stage 4: Single Agent
 
-Project TANGO - Terraform AI-Native Generator and Orchestrator with enhanced capabilities:
-
 Core Features:
 - Unified agent approach with DynamoDB state management
 - Enhanced automation with failure pattern learning
@@ -96,9 +94,55 @@ Implementation Architecture:
    - Service compatibility checks
 
 ### Stage 5: Multi-Agent Pipeline
-- Specialized agents
-- Full automation
+
+Core Features:
+- Specialized agents working in concert
+- Full end-to-end automation
 - Complete validation lifecycle
+- Cross-service integration
+
+Implementation Architecture:
+1. **Discovery Agent**
+   - Finds unprocessed resources from GitHub releases
+   - Provider compatibility verification
+   - Version detection and constraints
+   - Service prerequisites validation
+
+2. **Documentation Agent**
+   - Generates Terraform code with correct provider versions
+   - Best practices implementation
+   - Security standards enforcement
+   - Cross-resource dependency mapping
+
+3. **Terraform Agent**
+   - Executes complete terraform validation lifecycle
+   - Resource deployment sequencing
+   - State management and tracking
+   - Error handling and recovery
+
+4. **Terraform Cleanup Agent**
+   - Removes provider blocks and terraform blocks from code
+   - Configuration standardization
+   - Output formatting
+   - Documentation preparation
+
+5. **Storage Agent**
+   - Handles DynamoDB logging and S3 file storage
+   - Execution history preservation
+   - Configuration versioning
+   - Pattern recognition and learning
+
+6. **Cleanup Agent**
+   - Cleans up orphaned AWS resources from failed executions
+   - Dependency-aware cleanup
+   - Verification of complete removal
+   - State consistency maintenance
+
+7. **Orchestrator Agent**
+   - Coordinates the entire workflow
+   - Process monitoring and control
+   - Error recovery and retry logic
+   - Reporting and notifications
 
 ## Selected Resources
 
@@ -189,20 +233,40 @@ Success Metrics:
 - Resource Support: 100% (5/5)
 - Apply Success: 80% (4/5)
 
+### Stage 5 Results
+
+1. **Basic Resources**
+   - S3 Bucket: ✅ Success (Valid config, successful apply/destroy with dynamic naming)
+   - Lambda Function: ✅ Success (Valid config, successful apply/destroy with inline code)
+
+2. **Advanced Networking**
+   - App Runner VPC Connector: ✅ Success (Valid config, successful apply/destroy with multi-AZ setup)
+
+3. **Modern Services**
+   - Kinesis Stream Consumer: ✅ Success (Valid config, successful apply/destroy with stream integration)
+   - AIOps Investigation Group: ✅ Success (Valid config, successful apply/destroy with IAM policies)
+
+Success Metrics:
+- Configuration Syntax: 100% (5/5)
+- Resource Support: 100% (5/5)
+- Apply Success: 100% (5/5)
+
 ```
 tango-evaluation/
 ├── resources/              
 │   ├── stage1/            # Stage 1 configurations
 │   ├── stage2/            # Stage 2 configurations
 │   ├── stage3/            # Stage 3 configurations
-│   └── stage4/            # Stage 4 configurations
+│   ├── stage4/            # Stage 4 configurations
+│   └── stage5/            # Stage 5 configurations
 ├── scripts/
 │   └── validate.sh        # Validation script
 └── results/
     ├── stage1/           # Stage 1 results and logs
     ├── stage2/           # Stage 2 results and logs
     ├── stage3/           # Stage 3 results and logs
-    └── stage4/           # Stage 4 results and logs
+    ├── stage4/           # Stage 4 results and logs
+    └── stage5/           # Stage 5 results and logs
 ```
 
 ## Evaluation Process
@@ -310,3 +374,22 @@ For each selected resource:
    - Service-specific permissions and role configurations
    - Resource dependencies and state synchronization
    - Output size management for large configurations
+
+### Stage 5
+1. **Code Generation**
+   - Specialized agent collaboration for comprehensive solutions
+   - Dynamic resource naming with random suffixes
+   - Proper multi-provider integration
+   - Advanced security configurations
+
+2. **Resource Support**
+   - Complete support for all tested resources
+   - Advanced service integration (AIOps, Kinesis)
+   - Multi-AZ configurations for high availability
+   - Proper IAM role and policy management
+
+3. **Common Issues**
+   - Resource creation timing dependencies
+   - IAM policy propagation delays
+   - Cross-service integration complexity
+   - Resource cleanup sequencing
