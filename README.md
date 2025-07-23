@@ -2,6 +2,27 @@
 
 Evaluation framework for comparing different implementation stages of TANGO (Terraform AI-Native Generator and Orchestrator).
 
+## Repository Structure
+
+```
+tango-evaluation/
+├── resources/              
+│   ├── stage1/            # Stage 1 configurations
+│   ├── stage2/            # Stage 2 configurations
+│   ├── stage3/            # Stage 3 configurations
+│   ├── stage4/            # Stage 4 configurations
+│   └── stage5/            # Stage 5 configurations
+├── scripts/
+│   └── validate.sh        # Validation script
+├── results/
+│   ├── stage1/           # Stage 1 results and logs
+│   ├── stage2/           # Stage 2 results and logs
+│   ├── stage3/           # Stage 3 results and logs
+│   ├── stage4/           # Stage 4 results and logs
+│   └── stage5/           # Stage 5 results and logs
+└── comprehensive_evaluation.md  # Detailed comparison of all stages and official documentation
+```
+
 ## Implementation Stages
 
 ### Stage 1: Simple Q CLI
@@ -251,24 +272,6 @@ Success Metrics:
 - Resource Support: 100% (5/5)
 - Apply Success: 100% (5/5)
 
-```
-tango-evaluation/
-├── resources/              
-│   ├── stage1/            # Stage 1 configurations
-│   ├── stage2/            # Stage 2 configurations
-│   ├── stage3/            # Stage 3 configurations
-│   ├── stage4/            # Stage 4 configurations
-│   └── stage5/            # Stage 5 configurations
-├── scripts/
-│   └── validate.sh        # Validation script
-└── results/
-    ├── stage1/           # Stage 1 results and logs
-    ├── stage2/           # Stage 2 results and logs
-    ├── stage3/           # Stage 3 results and logs
-    ├── stage4/           # Stage 4 results and logs
-    └── stage5/           # Stage 5 results and logs
-```
-
 ## Evaluation Process
 
 For each selected resource:
@@ -393,3 +396,7 @@ For each selected resource:
    - IAM policy propagation delays
    - Cross-service integration complexity
    - Resource cleanup sequencing
+
+## Comprehensive Evaluation
+
+For a detailed comparison of all stages and their relationship with the official Terraform Registry documentation, see [comprehensive_evaluation.md](comprehensive_evaluation.md).
