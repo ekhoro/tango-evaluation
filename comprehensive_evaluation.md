@@ -23,7 +23,6 @@ This document provides a comprehensive comparison of all five stages of the TANG
 | Stage 3 | ❌ Failed | Access denied issues |
 | Stage 4 | ✅ Success | Valid config, successful apply/destroy |
 | Stage 5 | ✅ Success | Valid config with dynamic naming, enhanced security |
-| Official Docs | ⚠️ Basic | Simple example without security best practices |
 
 **Key Evolution**:
 - Stage 1: Basic structure with schema issues
@@ -31,7 +30,6 @@ This document provides a comprehensive comparison of all five stages of the TANG
 - Stage 3: Configuration issues with permissions
 - Stage 4: Resolved permission issues
 - Stage 5: Added dynamic naming, encryption, versioning, and public access blocking
-- Official: Simple example with minimal configuration
 
 ### 2. Lambda Function
 
@@ -42,7 +40,6 @@ This document provides a comprehensive comparison of all five stages of the TANG
 | Stage 3 | ✅ Success | Valid config, successful apply/destroy |
 | Stage 4 | ✅ Success | Valid config, successful apply/destroy with IAM delay |
 | Stage 5 | ✅ Success | Valid config with inline code, modern runtime |
-| Official Docs | ⚠️ Basic | Uses placeholder IAM role, older runtime |
 
 **Key Evolution**:
 - Stage 1: Basic structure with placeholder IAM role
@@ -50,7 +47,6 @@ This document provides a comprehensive comparison of all five stages of the TANG
 - Stage 3: Improved configuration
 - Stage 4: Added IAM delay handling
 - Stage 5: Updated to modern runtime, inline code, environment variables
-- Official: Basic example with placeholder IAM role
 
 ### 3. App Runner VPC Connector
 
@@ -61,7 +57,6 @@ This document provides a comprehensive comparison of all five stages of the TANG
 | Stage 3 | ✅ Success | Valid config, successful apply/destroy |
 | Stage 4 | ✅ Success | Valid config, successful apply/destroy |
 | Stage 5 | ✅ Success | Valid config with multi-AZ setup |
-| Official Docs | ⚠️ Basic | Uses placeholder subnet IDs and security groups |
 
 **Key Evolution**:
 - Stage 1: Basic structure with placeholder subnets
@@ -69,7 +64,6 @@ This document provides a comprehensive comparison of all five stages of the TANG
 - Stage 3: Proper resource types and configuration
 - Stage 4: Improved configuration and validation
 - Stage 5: Multi-AZ setup, proper security groups, DNS support
-- Official: Basic example with placeholder values
 
 ### 4. Kinesis Stream Consumer
 
@@ -80,7 +74,6 @@ This document provides a comprehensive comparison of all five stages of the TANG
 | Stage 3 | ✅ Success | Valid config, successful apply/destroy |
 | Stage 4 | ✅ Success | Valid config, successful apply/destroy |
 | Stage 5 | ✅ Success | Valid config with stream integration |
-| Official Docs | ❌ Missing | Not available in Terraform Registry at time of evaluation |
 
 **Key Evolution**:
 - Stage 1: Resource not supported
@@ -88,7 +81,6 @@ This document provides a comprehensive comparison of all five stages of the TANG
 - Stage 3: Basic support added
 - Stage 4: Improved configuration
 - Stage 5: Complete stream integration, retention period, consistent tagging
-- Official: Documentation not available
 
 ### 5. AIOps Investigation Group
 
@@ -99,7 +91,6 @@ This document provides a comprehensive comparison of all five stages of the TANG
 | Stage 3 | ❌ Failed | Invalid resource configuration |
 | Stage 4 | ❌ Failed | IAM role assumption issues |
 | Stage 5 | ✅ Success | Valid config with IAM policies |
-| Official Docs | ❌ Missing | Not available in Terraform Registry at time of evaluation |
 
 **Key Evolution**:
 - Stage 1: Resource not supported
@@ -107,7 +98,6 @@ This document provides a comprehensive comparison of all five stages of the TANG
 - Stage 3: Basic support but invalid configuration
 - Stage 4: Improved but still had IAM issues
 - Stage 5: Complete IAM integration, CloudTrail integration, retention configuration
-- Official: Documentation not available
 
 ## Architectural Evolution
 
@@ -143,19 +133,19 @@ This document provides a comprehensive comparison of all five stages of the TANG
 
 ## Feature Comparison
 
-| Feature | Stage 1 | Stage 2 | Stage 3 | Stage 4 | Stage 5 | Official Docs |
-|---------|---------|---------|---------|---------|---------|---------------|
-| Valid HCL Syntax | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Schema Compatibility | ❌ | ✅ | ⚠️ | ✅ | ✅ | ✅ |
-| Resource Dependencies | ❌ | ⚠️ | ✅ | ✅ | ✅ | ⚠️ |
-| Security Best Practices | ❌ | ⚠️ | ⚠️ | ✅ | ✅ | ❌ |
-| Dynamic Naming | ❌ | ❌ | ❌ | ⚠️ | ✅ | ❌ |
-| Multi-Provider Integration | ❌ | ❌ | ⚠️ | ✅ | ✅ | ❌ |
-| High Availability Design | ❌ | ❌ | ❌ | ⚠️ | ✅ | ❌ |
-| IAM Role Management | ❌ | ⚠️ | ⚠️ | ✅ | ✅ | ❌ |
-| Modern Service Support | ❌ | ❌ | ⚠️ | ✅ | ✅ | ⚠️ |
-| Consistent Tagging | ❌ | ⚠️ | ⚠️ | ✅ | ✅ | ⚠️ |
-| Resource Cleanup | ❌ | ⚠️ | ⚠️ | ✅ | ✅ | ❌ |
+| Feature | Stage 1 | Stage 2 | Stage 3 | Stage 4 | Stage 5 |
+|---------|---------|---------|---------|---------|---------|
+| Valid HCL Syntax | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Schema Compatibility | ❌ | ✅ | ⚠️ | ✅ | ✅ |
+| Resource Dependencies | ❌ | ⚠️ | ✅ | ✅ | ✅ |
+| Security Best Practices | ❌ | ⚠️ | ⚠️ | ✅ | ✅ |
+| Dynamic Naming | ❌ | ❌ | ❌ | ⚠️ | ✅ |
+| Multi-Provider Integration | ❌ | ❌ | ⚠️ | ✅ | ✅ |
+| High Availability Design | ❌ | ❌ | ❌ | ⚠️ | ✅ |
+| IAM Role Management | ❌ | ⚠️ | ⚠️ | ✅ | ✅ |
+| Modern Service Support | ❌ | ❌ | ⚠️ | ✅ | ✅ |
+| Consistent Tagging | ❌ | ⚠️ | ⚠️ | ✅ | ✅ |
+| Resource Cleanup | ❌ | ⚠️ | ⚠️ | ✅ | ✅ |
 
 ## Detailed Comparison with Official Documentation
 
@@ -163,42 +153,42 @@ This document provides a comprehensive comparison of all five stages of the TANG
 
 **Official Documentation**: [awscc_s3_bucket](https://registry.terraform.io/providers/hashicorp/awscc/1.49.0/docs/resources/s3_bucket)
 
-| Feature | Official Documentation | TANGO Stage 5 | Improvement |
-|---------|------------------------|---------------|-------------|
-| Basic Configuration | ✅ Simple example | ✅ Enhanced example | Added security best practices |
-| Encryption | ❌ Not in example | ✅ AES256 encryption | Security enhancement |
-| Public Access Block | ❌ Not in example | ✅ Complete blocking | Security enhancement |
-| Versioning | ❌ Not in example | ✅ Enabled | Data protection enhancement |
-| Tagging | ✅ Basic tags | ✅ Environment tags | Consistent tagging strategy |
-| Outputs | ❌ Not in example | ✅ ARN and name | Better usability |
+| Feature | Official Documentation | TANGO Stage 5 | Difference |
+|---------|------------------------|---------------|------------|
+| Basic Configuration | ✅ Simple example | ✅ Enhanced example | Added security features |
+| Encryption | ❌ Not in example | ✅ AES256 encryption | Additional security feature |
+| Public Access Block | ❌ Not in example | ✅ Complete blocking | Additional security feature |
+| Versioning | ❌ Not in example | ✅ Enabled | Additional data protection |
+| Tagging | ✅ Basic tags | ✅ Environment tags | Different tagging approach |
+| Outputs | ❌ Not in example | ✅ ARN and name | Additional outputs |
 
 ### 2. Lambda Function
 
 **Official Documentation**: [awscc_lambda_function](https://registry.terraform.io/providers/hashicorp/awscc/1.49.0/docs/resources/lambda_function)
 
-| Feature | Official Documentation | TANGO Stage 5 | Improvement |
-|---------|------------------------|---------------|-------------|
-| IAM Role | ❌ Uses placeholder | ✅ Complete IAM role | Proper IAM integration |
-| Runtime | ✅ nodejs14.x | ✅ nodejs20.x | Updated to latest runtime |
-| Code | ✅ Inline code | ✅ Inline code | Both use inline code |
-| Environment Variables | ❌ Not in example | ✅ Included | Enhanced configuration |
-| Memory & Timeout | ❌ Default values | ✅ Configured | Performance optimization |
-| Architecture | ❌ Not specified | ✅ x86_64 specified | Complete configuration |
-| Tagging | ❌ Not in example | ✅ Environment tags | Consistent tagging strategy |
-| Outputs | ❌ Not in example | ✅ ARN output | Better usability |
+| Feature | Official Documentation | TANGO Stage 5 | Difference |
+|---------|------------------------|---------------|------------|
+| IAM Role | ❌ Uses placeholder | ✅ Complete IAM role | Full IAM integration |
+| Runtime | ✅ nodejs14.x | ✅ nodejs20.x | Updated runtime version |
+| Code | ✅ Inline code | ✅ Inline code | Same approach |
+| Environment Variables | ❌ Not in example | ✅ Included | Additional configuration |
+| Memory & Timeout | ❌ Default values | ✅ Configured | Explicit configuration |
+| Architecture | ❌ Not specified | ✅ x86_64 specified | Explicit architecture |
+| Tagging | ❌ Not in example | ✅ Environment tags | Additional tagging |
+| Outputs | ❌ Not in example | ✅ ARN output | Additional outputs |
 
 ### 3. App Runner VPC Connector
 
 **Official Documentation**: [awscc_apprunner_vpc_connector](https://registry.terraform.io/providers/hashicorp/awscc/1.49.0/docs/resources/apprunner_vpc_connector)
 
-| Feature | Official Documentation | TANGO Stage 5 | Improvement |
-|---------|------------------------|---------------|-------------|
-| VPC Configuration | ❌ Uses placeholders | ✅ Complete VPC setup | Full networking integration |
-| Multi-AZ | ❌ Not specified | ✅ Two availability zones | High availability design |
-| Security Group | ❌ Uses placeholder | ✅ Proper security group | Security enhancement |
-| DNS Support | ❌ Not configured | ✅ Enabled | Network optimization |
-| Tagging | ✅ Basic tags | ✅ Environment tags | Consistent tagging strategy |
-| Outputs | ❌ Not in example | ✅ ARN output | Better usability |
+| Feature | Official Documentation | TANGO Stage 5 | Difference |
+|---------|------------------------|---------------|------------|
+| VPC Configuration | ❌ Uses placeholders | ✅ Complete VPC setup | Full networking setup |
+| Multi-AZ | ❌ Not specified | ✅ Two availability zones | Added high availability |
+| Security Group | ❌ Uses placeholder | ✅ Proper security group | Full security configuration |
+| DNS Support | ❌ Not configured | ✅ Enabled | Additional networking feature |
+| Tagging | ✅ Basic tags | ✅ Environment tags | Different tagging approach |
+| Outputs | ❌ Not in example | ✅ ARN output | Additional outputs |
 
 ### 4. Kinesis Stream Consumer
 
@@ -252,23 +242,23 @@ TANGO Stage 5 provides a complete implementation with:
 
 ## Stage 5 vs. Official Documentation
 
-### Advantages of TANGO Stage 5:
+### Differences in TANGO Stage 5:
 
-1. **Security Enhancements**:
+1. **Security Features**:
    - Server-side encryption for S3
    - Public access blocking for S3
    - Versioning for data protection
    - Least privilege IAM policies
 
-2. **Architecture Improvements**:
+2. **Architecture Aspects**:
    - Multi-AZ configurations for high availability
    - Latest runtimes for Lambda
-   - Proper resource sizing
+   - Explicit resource sizing
    - Complete VPC configurations
 
-3. **Usability Enhancements**:
+3. **Usability Elements**:
    - Consistent tagging across resources
-   - Useful outputs for resource reference
+   - Additional outputs for resource reference
    - Complete resource dependencies
    - Dynamic naming with random suffixes
 
