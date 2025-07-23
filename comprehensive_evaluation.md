@@ -170,7 +170,7 @@ This document provides a comprehensive comparison of all five stages of the TANG
 |---------|------------------------|---------------|------------|
 | IAM Role | ❌ Uses placeholder | ✅ Complete IAM role | Full IAM integration |
 | Runtime | ✅ nodejs14.x | ✅ nodejs20.x | Updated runtime version |
-| Code | ✅ Inline code | ✅ Inline code | Same approach |
+| Code | ✅ S3 reference | ✅ Inline code | Different deployment approach |
 | Environment Variables | ❌ Not in example | ✅ Included | Additional configuration |
 | Memory & Timeout | ❌ Default values | ✅ Configured | Explicit configuration |
 | Architecture | ❌ Not specified | ✅ x86_64 specified | Explicit architecture |
